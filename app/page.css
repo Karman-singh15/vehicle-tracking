@@ -1,0 +1,7 @@
+@media (max-width: 740px){
+    .main{
+        flex-direction: column;
+        max-width: 0 auto;
+        align-items: center;
+    }
+}
