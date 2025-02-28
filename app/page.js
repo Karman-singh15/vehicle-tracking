@@ -13,7 +13,7 @@ export default function Home() {
   var driver;
   var start;
   const places=["Mundka Cluster","Nangli Sakrawati","Khayala","Kapas Hera","Sec-17 Hub","Dhulsiras Hub"];
-  var total_time=0;
+  var total_time=60;
 
 
   function geocoder(location) {
@@ -171,7 +171,7 @@ export default function Home() {
           total_time+=Math.round(minTime / 60);
           var output=document.getElementById("output");
           output.innerHTML=`${Math.round(total_time / 60)} hrs ${Math.round(total_time % 60)} mins and place ${places[bestDestination]}`
-          total_time=0;
+          total_time=60;
         } else {
           console.log("No route data found.");
         }
@@ -238,7 +238,6 @@ export default function Home() {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li><Link href="/vehicle-tracking"><p>Vehicle Tracking</p></Link></li>
-              <li><Link href="/archive"><p>Archive</p></Link></li>
             </ul>
           </div>
           <Link href="/"><p className="btn btn-ghost text-xl"><Image src="/Screenshot 2025-02-19 230734.png" alt="logo" height={100} width={100} /></p></Link>
@@ -246,7 +245,6 @@ export default function Home() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><Link href="/vehicle-tracking"><p>Vehicle Tracking</p></Link></li>
-            <li><Link href="/archive"><p>Archive</p></Link></li>
           </ul>
         </div>
         <div className="navbar-end">
