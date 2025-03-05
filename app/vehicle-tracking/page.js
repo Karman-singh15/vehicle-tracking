@@ -27,7 +27,6 @@ export default function Vehicle_Tracking() {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li><Link href="/vehicle-tracking"><p>Vehicle Tracking</p></Link></li>
-                            <li><Link href="/archive"><p>Archive</p></Link></li>
                             
                         </ul>
                     </div>
@@ -36,7 +35,6 @@ export default function Vehicle_Tracking() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link href="/vehicle-tracking"><p>Vehicle Tracking</p></Link></li>
-                        <li><Link href="/archive"><p>Archive</p></Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
