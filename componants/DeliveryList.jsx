@@ -3,7 +3,7 @@ import RemoveBtn from "./RemoveBtn";
 const getDelivery = async () => {
     try {
         const res = await fetch(`https://vehicle-tracking-five.vercel.app/api/vehicles`, {
-            method: "GET"
+            method: "GET",
             cache: "no-store"
         });
 
