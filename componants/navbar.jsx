@@ -4,7 +4,7 @@ import Image from "next/image";
 export default async function Navbar() {
 
     return (
-        <div className="navbar bg-base-100 flex">
+        <div className="navbar bg-base-100 w-screen flex">
             <div className="navbar-start w-1/3">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
