@@ -1,8 +1,9 @@
 import RemoveBtn from "./RemoveBtn";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
 const getDelivery = async () => {
     try {
-        const res = await fetch("http://localhost:3000/api/vehicles", {
+        const res = await fetch(`${API_BASE_URL}/api/vehicles`, {
             cache: "no-store"
         });
 
