@@ -1,31 +1,26 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import RemoveBtn from "./RemoveBtn";
 
-export default function DeliveryList() {
-    const [deliveries, setDeliveries] = useState([]);
-    const [loading, setLoading] = useState(true);
+const getDelivery = async () => {
+    try {
+        const res = await fetch(`https://vehicle-tracking-five.vercel.app//api/vehicles`, {
+            method: "GET",
+            cache: "no-store"
+        });
 
-    useEffect(() => {
-        const fetchDeliveries = async () => {
-            try {
-                const res = await fetch("/api/vehicles");
-                if (!res.ok) throw new Error("Failed to fetch data");
-                const data = await res.json();
-                setDeliveries(data.deliveries || []);
-                console.log(deliveries);
-            } catch (error) {
-                console.error("Fetch Error:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+        if (!res.ok) {
+            throw new Error("Failed to fetch data");
+        }
+        return res.json();
 
-        fetchDeliveries();
-    }, []);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-    if (loading) return <p>Loading...</p>;
+export default async function DeliveryList() {
+
+    const { deliveries } = await getDelivery();
+    var del = 0;
 
     function time() {
         var hour = Number(deliveries[del].createdAt.slice(11, 13)) + Math.floor(deliveries[del].total_time / 60)+5;
