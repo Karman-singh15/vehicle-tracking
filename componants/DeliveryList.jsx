@@ -2,7 +2,7 @@ import RemoveBtn from "./RemoveBtn";
 
 const getDelivery = async () => {
     try {
-        const res = await fetch("http://localhost:3000/api/vehicles", {
+        const res = await fetch("/api/vehicles", {
             cache: "no-store"
         });
 
