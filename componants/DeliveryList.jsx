@@ -1,21 +1,21 @@
 import RemoveBtn from "./RemoveBtn";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
 const getDelivery = async () => {
     try {
-        const res = await fetch(`${API_BASE_URL}/api/vehicles`, {
-            cache: "no-store"
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/vehicles`, {
+            cache: "no-store",  // Ensures fresh data each request
+            next: { revalidate: 0 } // Forces it to run on the server
         });
 
-        if (!res.ok) {
-            throw new Error("Failed to fetch data");
-        }
-        return res.json();
+        if (!res.ok) throw new Error(`Failed to fetch data: ${res.statusText}`);
 
+        return res.json();
     } catch (error) {
-        console.log(error);
+        console.error("Fetch Error:", error);
+        return { deliveries: [] }; // Avoids destructuring errors
     }
-}
+};
+
 
 export default async function DeliveryList() {
 
