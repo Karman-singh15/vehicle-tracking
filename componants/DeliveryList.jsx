@@ -14,6 +14,7 @@ export default function DeliveryList() {
                 if (!res.ok) throw new Error("Failed to fetch data");
                 const data = await res.json();
                 setDeliveries(data.deliveries || []);
+                console.log(deliveries);
             } catch (error) {
                 console.error("Fetch Error:", error);
             } finally {
@@ -25,7 +26,6 @@ export default function DeliveryList() {
     }, []);
 
     if (loading) return <p>Loading...</p>;
-    console.log(deliveries);
 
     function time() {
         var hour = Number(deliveries[del].createdAt.slice(11, 13)) + Math.floor(deliveries[del].total_time / 60)+5;
