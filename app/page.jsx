@@ -15,7 +15,7 @@ export default async function Home() {
 
   async function addData(driver,end_position,total_time){
     try {
-      const res = await fetch("http://localhost:3000/api/vehicles", {
+      const res = await fetch("/api/vehicles", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
