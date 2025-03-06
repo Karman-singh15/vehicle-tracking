@@ -2,7 +2,7 @@ import RemoveBtn from "./RemoveBtn";
 
 const getDelivery = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/vehicles`, {
+        const res = await fetch(`https://vehicle-tracking-five.vercel.app/api/vehicles`, {
             cache: "no-store"
         });
 
@@ -11,7 +11,6 @@ const getDelivery = async () => {
         return res.json();
     } catch (error) {
         console.error("Fetch Error:", error);
-        return { deliveries: [] }; // Avoids destructuring errors
     }
 };
 
