@@ -19,7 +19,8 @@ const getDelivery = async () => {
 
 export default async function DeliveryList() {
 
-    const { deliveries } = await getDelivery();
+    const data = await getDelivery();
+    const deliveries = data?.deliveries || [];
     var del = 0;
 
     function time() {
