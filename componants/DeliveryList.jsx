@@ -25,6 +25,7 @@ export default function DeliveryList() {
     }, []);
 
     if (loading) return <p>Loading...</p>;
+    console.log(deliveries);
 
     function time() {
         var hour = Number(deliveries[del].createdAt.slice(11, 13)) + Math.floor(deliveries[del].total_time / 60)+5;
