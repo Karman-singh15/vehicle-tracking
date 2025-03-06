@@ -9,7 +9,7 @@ export default function RemoveBtn({ id }) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`/api/vehicles?id=${id}`, {
+      const res = await fetch(`https://vehicle-tracking-five.vercel.app/api/vehicles?id=${id}`, {
         method: "DELETE",
       });
 
