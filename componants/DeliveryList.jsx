@@ -1,24 +1,30 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import RemoveBtn from "./RemoveBtn";
 
-const getDelivery = async () => {
-    try {
-        const res = await fetch(`/app/api/vehicles`, {
-            cache: "no-store"
-        });
+export default function DeliveryList() {
+    const [deliveries, setDeliveries] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-        if (!res.ok) throw new Error(`Failed to fetch data: ${res.statusText}`);
+    useEffect(() => {
+        const fetchDeliveries = async () => {
+            try {
+                const res = await fetch("/api/vehicles");
+                if (!res.ok) throw new Error("Failed to fetch data");
+                const data = await res.json();
+                setDeliveries(data.deliveries || []);
+            } catch (error) {
+                console.error("Fetch Error:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-        return res.json();
-    } catch (error) {
-        console.error("Fetch Error:", error);
-    }
-};
+        fetchDeliveries();
+    }, []);
 
-
-export default async function DeliveryList() {
-
-    const { deliveries } = await getDelivery();
-    var del = 0;
+    if (loading) return <p>Loading...</p>;
 
     function time() {
         var hour = Number(deliveries[del].createdAt.slice(11, 13)) + Math.floor(deliveries[del].total_time / 60)+5;
