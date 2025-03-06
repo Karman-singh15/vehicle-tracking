@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100 text-white`}
       >
-        <Navbar />
+        <div className="w-screen"><Navbar /></div>
         {children}
       </body>
     </html>
