@@ -3,8 +3,7 @@ import RemoveBtn from "./RemoveBtn";
 const getDelivery = async () => {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/vehicles`, {
-            cache: "no-store",  // Ensures fresh data each request
-            next: { revalidate: 0 } // Forces it to run on the server
+            cache: "no-store"
         });
 
         if (!res.ok) throw new Error(`Failed to fetch data: ${res.statusText}`);
