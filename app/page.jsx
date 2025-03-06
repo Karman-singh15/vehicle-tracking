@@ -187,7 +187,7 @@ export default async function Home() {
           console.log(`Destination with least travel time: ${bestDestination} (Time: ${Math.round(minTime / 60)} minutes)`);
           total_time += Math.round(minTime / 60);
           var output = document.getElementById("output");
-          output.innerHTML = `${Math.round(total_time / 60)} hrs ${Math.round(total_time % 60)} mins and place ${places[bestDestination]}`
+          output.innerHTML = `${Math.round(total_time / 60)-1} hrs ${Math.round(total_time % 60)} mins and place ${places[bestDestination]}`
           addData(driver, places[bestDestination], total_time);
           total_time = 60;
         } else {
