@@ -31,6 +31,7 @@ export default async function DeliveryList() {
         
         if (minutes>120){
             minutes= minutes-120;
+            hour+=2;
         }
         if (minutes > 60) {
             minutes = minutes - 60;
