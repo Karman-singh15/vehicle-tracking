@@ -259,7 +259,7 @@ export default async function Home() {
           <input type="submit" value="Submit" className="btn" onClick={estTime} />
         </div>
       </div>
-      <div className="output h-24 pt-10 w-screen text-center text-white bg-base-100" id="output"></div>
+      <div className="output h-24 pt-10 w-screen text-center text-black bg-base-100" id="output"></div>
     </>
   )
 }
