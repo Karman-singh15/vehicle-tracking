@@ -28,6 +28,10 @@ export default async function DeliveryList() {
         var minutes = Number(deliveries[del].createdAt.slice(14, 16)) + Math.floor(deliveries[del].total_time % 60)+30;
         del++;
 
+        
+        if (minutes>120){
+            minutes= minutes-120;
+        }
         if (minutes > 60) {
             minutes = minutes - 60;
             hour++;
