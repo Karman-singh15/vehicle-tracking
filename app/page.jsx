@@ -35,7 +35,7 @@ export default async function Home() {
 
   function geocoder(location) {
     const place = location;
-    const url = `https://api.tomtom.com/search/2/geocode/${encodeURIComponent(place)}.json?key=rcKcEQQFCE823337NGGwReGAIWSscizx`;
+    const url = `https://api.tomtom.com/search/2/geocode/${encodeURIComponent(place)}.json?key=${process.env.API_KEY}`;
 
     return fetch(url)
       .then(response => response.json())
@@ -84,7 +84,7 @@ export default async function Home() {
       body: raw
     };
 
-    fetch("https://api.tomtom.com/routing/matrix/2?key=rcKcEQQFCE823337NGGwReGAIWSscizx", requestOptions)
+    fetch(`https://api.tomtom.com/routing/matrix/2?key=${process.env.API_KEY}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         console.log(result); // Log full response for debugging
