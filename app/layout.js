@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <link rel="shortcut-icon" src="@/public/Screenshot 2025-02-19 230734" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
       >
         <div className="navbar flex">
           <div className="navbar-start w-1/3">
