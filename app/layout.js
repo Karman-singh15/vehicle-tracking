@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100 text-black`}
       >
-        <div className="navbar flex">
+        <div className="navbar flex bg-base-100 text-black">
           <div className="navbar-start w-1/3">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
