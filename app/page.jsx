@@ -234,7 +234,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="main pt-24 justify-center join flex bg-base-100">
+      <div className="main pt-24 justify-center join flex">
         <div className="mr-4">
           <select id="strt" className="select select-bordered w-full max-w-xs">
             <option disabled selected value="0">Choose Start Location</option>
@@ -259,7 +259,7 @@ export default async function Home() {
           <input type="submit" value="Submit" className="btn" onClick={estTime} />
         </div>
       </div>
-      <div className="output h-24 pt-10 w-screen text-center text-black bg-base-100" id="output"></div>
+      <div className="output h-24 pt-10 w-screen text-center" id="output"></div>
     </>
   )
 }
